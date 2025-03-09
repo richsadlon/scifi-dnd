@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Centauri System</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .star-system {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            border: 1px solid white;
+            border-radius: 50%;
+        }
+        .orbit {
+            position: absolute;
+            border: 1px dashed white;
+            border-radius: 50%;
+        }
+        .orbit-a-b {
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .orbit-c {
+            width: 400px;
+            height: 400px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .star {
+            position: absolute;
+            border-radius: 50%;
+        }
+        .alpha-centauri-a {
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translateX(100px);
+            animation: orbit-a 10s linear infinite;
+        }
+        .alpha-centauri-b {
+            width: 40px;
+            height: 40px;
+            background-color: orange;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translateX(100px);
+            animation: orbit-b 10s linear infinite;
+        }
+        .proxima-centauri {
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translateX(200px);
+            animation: orbit-c 20s linear infinite;
+        }
+        .label {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, 10px);
+            text-align: center;
+            font-size: 14px;
+        }
+        @keyframes orbit-a {
+            0% { transform: translate(-50%, -50%) rotate(0deg) translateX(100px) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg) translateX(100px) rotate(-360deg); }
+        }
+        @keyframes orbit-b {
+            0% { transform: translate(-50%, -50%) rotate(0deg) translateX(100px) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg) translateX(100px) rotate(-360deg); }
+        }
+        @keyframes orbit-c {
+            0% { transform: translate(-50%, -50%) rotate(0deg) translateX(200px) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg) translateX(200px) rotate(-360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="star-system">
+        <div class="orbit orbit-a-b"></div>
+        <div class="orbit orbit-c"></div>
+        <div class="star alpha-centauri-a">
+            <div class="label">Alpha Centauri A (Class G)</div>
+        </div>
+        <div class="star alpha-centauri-b">
+            <div class="label">Alpha Centauri B (Class K)</div>
+        </div>
+        <div class="star proxima-centauri">
+            <div class="label">Proxima Centauri (Class M)</div>
+        </div>
+    </div>
+</body>
+</html>
